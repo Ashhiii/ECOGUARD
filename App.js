@@ -12,6 +12,8 @@ import WelcomeScreen from './src/AdminPage/WelcomeScreen';
 import LoginScreen from './src/AuthenticationScreen/Login';
 import RegisterScreen from './src/AuthenticationScreen/Register';
 
+import Map from './src/Map/Location';
+
   const Stack = createStackNavigator();
 
   export default function App() {
@@ -51,6 +53,7 @@ import RegisterScreen from './src/AuthenticationScreen/Register';
             <Stack.Screen name="Intro" component={IntroScreen} />
             <Stack.Screen name="SignUp" component={RegisterScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Location" component={Map} />
             <Stack.Screen name="AdminHome" component={AdminHome} options={{ title: 'Admin Dashboard' }}/>
             <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
             <Stack.Screen name="AdminLogin" component={AdminLogin} />
