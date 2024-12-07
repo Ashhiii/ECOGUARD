@@ -12,6 +12,9 @@ import WelcomeScreen from './src/AdminPage/WelcomeScreen';
 import LoginScreen from './src/AuthenticationScreen/Login';
 import RegisterScreen from './src/AuthenticationScreen/Register';
 
+import HomeScreen from './src/Home/AQIIndicator/index';
+import BottomNav from './src/Home/BottomNav';
+
 import Map from './src/Map/Location';
 
   const Stack = createStackNavigator();
@@ -53,6 +56,8 @@ import Map from './src/Map/Location';
             <Stack.Screen name="Intro" component={IntroScreen} />
             <Stack.Screen name="SignUp" component={RegisterScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Home" component={HomeScreenWithBackground} />
+            <Stack.Screen name="AQIIndicator" component={HomeScreen} />
             <Stack.Screen name="Location" component={Map} />
             <Stack.Screen name="AdminHome" component={AdminHome} options={{ title: 'Admin Dashboard' }}/>
             <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
@@ -64,6 +69,17 @@ import Map from './src/Map/Location';
       </NavigationContainer>
     );
   }
+
+  const HomeScreenWithBackground = ({ navigation }) => (
+    <ImageBackground
+      source={require('./src/assets/home.jpg')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <HomeScreen navigation={navigation} />
+      <BottomNav navigation={navigation} /> 
+    </ImageBackground>
+  );
 
 
   const styles = StyleSheet.create({
