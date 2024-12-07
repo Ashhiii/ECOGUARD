@@ -8,7 +8,9 @@ export default function LoginScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
+  const handleLogin = () => {
+    navigation.navigate ('Home');
+  }
   const handleForgotPassword = () => {
     if (!email) {
       return;
@@ -47,7 +49,7 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>{'Log In'}</Text>
         </TouchableOpacity>
 
