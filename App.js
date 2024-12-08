@@ -20,7 +20,15 @@ import Map from './src/Map/Location';
 import Notification from './src/Notification/Reports'; 
 import ReportingTool from './src/ReportingTool/Report';
 
-  const Stack = createStackNavigator();
+import EnviroTipsScreen from './src/Components/IconGrid/index'; 
+import { Video } from 'expo-av';
+import TreeScreen from './src/Components/TreeScreen'; 
+import RecycleScreen from './src/Components/RecycleScreen';
+import PollutionScreen from './src/Components/PollutionScreen'; 
+import FootScreen from './src/Components/FootScreen'; 
+
+
+   const Stack = createStackNavigator();
 
   export default function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -57,24 +65,29 @@ import ReportingTool from './src/ReportingTool/Report';
         ) : (
           <Stack.Navigator initialRouteName="Intro" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Intro" component={IntroScreen} />
-            <Stack.Screen name="SignUp" component={RegisterScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Home" component={HomeScreenWithBackground} />
-            <Stack.Screen name="AQIIndicator" component={HomeScreen} />
+            <Stack.Screen name="EnviroTips" component={EnviroTipsScreenWithBackground} />
+            <Stack.Screen name="ReportingTool" component={ReportingTool} />
             <Stack.Screen name="Location" component={Map} />
             <Stack.Screen name="Notification" component={Notification} />
-            <Stack.Screen name="ReportingTool" component={ReportingTool} />
+            <Stack.Screen name="SignUp" component={RegisterScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="AQIIndicator" component={HomeScreen} />
+            <Stack.Screen name="TreeScreen" component={TreeScreen} />
+            <Stack.Screen name="RecycleScreen" component={RecycleScreen} />
+            <Stack.Screen name="PollutionScreen" component={PollutionScreen} />
+            <Stack.Screen name="FootScreen" component={FootScreen} />
             <Stack.Screen name="AdminHome" component={AdminHome} options={{ title: 'Admin Dashboard' }}/>
             <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
             <Stack.Screen name="AdminLogin" component={AdminLogin} />
             <Stack.Screen name="AdminDashboard" component={AdminDashboard}/>
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+     
           </Stack.Navigator>
         )}
       </NavigationContainer>
     );
   }
-
   const HomeScreenWithBackground = ({ navigation }) => (
     <ImageBackground
       source={require('./src/assets/home.jpg')}
@@ -86,6 +99,24 @@ import ReportingTool from './src/ReportingTool/Report';
     </ImageBackground>
   );
 
+  const EnviroTipsScreenWithBackground = ({ navigation }) => (
+    <ImageBackground
+      source={require('./src/assets/background.jpg')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <Video
+        source={require('./src/assets/video.mp4')}
+        style={styles.headerVideo}
+        resizeMode="cover"
+        shouldPlay
+        isLooping
+        isMuted
+      />
+      <EnviroTipsScreen />
+      <BottomNav navigation={navigation} /> 
+    </ImageBackground>
+  );
 
   const styles = StyleSheet.create({
     container: {
@@ -106,6 +137,13 @@ import ReportingTool from './src/ReportingTool/Report';
       flex: 1,
       justifyContent: 'flex-start',
     },
+    headerVideo: {
+      width: '180%',
+      height: 260,
+      position: 'absolute',
+      top: 0,
+      left: -140,
+      zIndex: 0,
+    },
   });
-
 
