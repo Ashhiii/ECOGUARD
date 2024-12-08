@@ -27,6 +27,12 @@ import RecycleScreen from './src/Components/RecycleScreen';
 import PollutionScreen from './src/Components/PollutionScreen'; 
 import FootScreen from './src/Components/FootScreen'; 
 
+import Settings from './src/Settings/SettingsScreen';
+import MyAccount from './src/Settings/MyAccount';
+import Notifications from './src/Settings/NotificationSettings';
+import Privacy from './src/Settings/PrivacyAndSecurity';
+import HelpSupport from './src/Settings/HelpAndSupport';
+import About from './src/Settings/About';
 
    const Stack = createStackNavigator();
 
@@ -82,6 +88,12 @@ import FootScreen from './src/Components/FootScreen';
             <Stack.Screen name="AdminLogin" component={AdminLogin} />
             <Stack.Screen name="AdminDashboard" component={AdminDashboard}/>
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+            <Stack.Screen name="Settings" component={Settings} />
+            <Stack.Screen name="MyAccount" component={MyAccount} options={{ title: 'My Account' }} />
+            <Stack.Screen name="NotificationSettings" component={Notifications} options={{ title: 'Notifications' }} />
+            <Stack.Screen name="PrivacyAndSecurity" component={Privacy} options={{ title: 'Privacy & Security' }} />
+            <Stack.Screen name="HelpAndSupport" component={HelpSupport} options={{ title: 'Help & Support' }} />
+            <Stack.Screen name="About" component={About} options={{ title: 'About' }} />
      
           </Stack.Navigator>
         )}
