@@ -17,6 +17,8 @@ import BottomNav from './src/Home/BottomNav';
 
 import Map from './src/Map/Location';
 
+import Notification from './src/Notification/Reports'; 
+
   const Stack = createStackNavigator();
 
   export default function App() {
@@ -59,6 +61,7 @@ import Map from './src/Map/Location';
             <Stack.Screen name="Home" component={HomeScreenWithBackground} />
             <Stack.Screen name="AQIIndicator" component={HomeScreen} />
             <Stack.Screen name="Location" component={Map} />
+            <Stack.Screen name="Notification" component={Notification} />
             <Stack.Screen name="AdminHome" component={AdminHome} options={{ title: 'Admin Dashboard' }}/>
             <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
             <Stack.Screen name="AdminLogin" component={AdminLogin} />
