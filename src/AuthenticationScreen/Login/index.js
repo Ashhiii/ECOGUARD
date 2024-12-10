@@ -8,7 +8,6 @@ export default function LoginScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
   return (
     <ImageBackground source={require('../../../src/assets/2.png')} style={styles.background}>
       <View style={styles.container}>
