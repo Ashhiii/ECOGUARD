@@ -3,11 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Tooltip from '../../../src/Home/ToolTip'; 
 
-const BottomNav = () => {
+const BottomNav = ({ navigation }) => {
   const navItems = [
     { icon: 'home', text: 'Home', screen: 'Home' },
     { icon: 'leaf', text: 'EnviroTips'},
-    { icon: 'camera', text: 'Reporting Tool'},
+    { icon: 'camera', text: 'Reporting Tool', screen: 'ReportingTool'},
     { icon: 'bell', text: 'Notifications'},
     { icon: 'cog', text: 'Settings' },
   ];
@@ -16,7 +16,7 @@ const BottomNav = () => {
     <View style={styles.bottomNav}>
       {navItems.map((item) => (
         <View key={item.text} style={styles.navItem}>
-          <TouchableOpacity style={styles.touchable}>
+          <TouchableOpacity onPress= {() => navigation.navigate(item.screen)} style={styles.touchable}>
             <Icon name={item.icon} size={24} color="#4CA771" />
             <Text style={styles.navText}>{item.text}</Text>
           </TouchableOpacity>
