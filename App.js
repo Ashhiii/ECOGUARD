@@ -17,6 +17,7 @@ import HomeScreen from './src/Home/AQIIndicator/index';
 import BottomNav from './src/Home/BottomNav'; 
 
 import Map from './src/Map/Location';
+import ReportingTool from './src/ReportingTool/Report';
 
   const Stack = createStackNavigator();
 
@@ -65,6 +66,7 @@ import Map from './src/Map/Location';
             <Stack.Screen name="Home" component={HomeScreenWithBackground} />
             <Stack.Screen name="AQIIndicator" component={HomeScreen} />
             <Stack.Screen name="Location" component={Map} />
+            <Stack.Screen name="ReportingTool" component={ReportingTool} />
           </Stack.Navigator>
         )}
       </NavigationContainer>
