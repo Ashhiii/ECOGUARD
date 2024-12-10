@@ -18,6 +18,7 @@ import BottomNav from './src/Home/BottomNav';
 
 import Map from './src/Map/Location';
 import ReportingTool from './src/ReportingTool/Report';
+import Notification from './src/Notification/Notify';
 
   const Stack = createStackNavigator();
 
@@ -67,6 +68,7 @@ import ReportingTool from './src/ReportingTool/Report';
             <Stack.Screen name="AQIIndicator" component={HomeScreen} />
             <Stack.Screen name="Location" component={Map} />
             <Stack.Screen name="ReportingTool" component={ReportingTool} />
+            <Stack.Screen name="Notification" component={Notification} />
           </Stack.Navigator>
         )}
       </NavigationContainer>
