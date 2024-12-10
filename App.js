@@ -13,6 +13,9 @@ import IntroScreen from './src/OpenIntro/IntroScreen';
 import LoginScreen from './src/AuthenticationScreen/Login';
 import RegisterScreen from './src/AuthenticationScreen/Register';
 
+import HomeScreen from './src/Home/AQIIndicator/index'; 
+import BottomNav from './src/Home/BottomNav'; 
+
   const Stack = createStackNavigator();
 
   export default function App() {
@@ -56,12 +59,26 @@ import RegisterScreen from './src/AuthenticationScreen/Register';
             <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
             <Stack.Screen name="AdminLogin" component={AdminLogin} />
             <Stack.Screen name="AdminDashboard" component={AdminDashboard}/>
-            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> 
+            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+            <Stack.Screen name="Home" component={HomeScreenWithBackground} />
+            <Stack.Screen name="AQIIndicator" component={HomeScreen} />
+ 
           </Stack.Navigator>
         )}
       </NavigationContainer>
     );
   }
+
+  const HomeScreenWithBackground = ({ navigation }) => (
+    <ImageBackground
+      source={require('./src/assets/home.jpg')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <HomeScreen navigation={navigation} />
+      <BottomNav navigation={navigation} /> 
+    </ImageBackground>
+  );
 
   const styles = StyleSheet.create({
     container: {
