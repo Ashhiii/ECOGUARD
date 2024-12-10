@@ -3,6 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Image, StyleSheet, Animated, ImageBackground } from 'react-native';
 
+import AdminHome from './src/AdminPage/AdminHome';
+import ReportDetails from './src/AdminPage/ReportDetails';
+import AdminLogin from './src/AdminPage/AdminLogin';
+import AdminDashboard from './src/AdminPage/AdminDashboard';
+import WelcomeScreen from './src/AdminPage/WelcomeScreen';
+
 import IntroScreen from './src/OpenIntro/IntroScreen';
 import LoginScreen from './src/AuthenticationScreen/Login';
 import RegisterScreen from './src/AuthenticationScreen/Register';
@@ -46,6 +52,11 @@ import RegisterScreen from './src/AuthenticationScreen/Register';
             <Stack.Screen name="Intro" component={IntroScreen} />
             <Stack.Screen name="SignUp" component={RegisterScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="AdminHome" component={AdminHome} options={{ title: 'Admin Dashboard' }}/>
+            <Stack.Screen name="ReportDetails" component={ReportDetails} options={{ title: 'Report Details' }}/>
+            <Stack.Screen name="AdminLogin" component={AdminLogin} />
+            <Stack.Screen name="AdminDashboard" component={AdminDashboard}/>
+            <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> 
           </Stack.Navigator>
         )}
       </NavigationContainer>
