@@ -62,7 +62,7 @@ const AQIIndicator = ({ navigation }) => {
         </View>
       </View>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Location')}>
         <View style={styles.iconContainer}>
           <Animated.Image
             style={[styles.mapImage, { transform: [{ rotate }] }]} 

@@ -16,6 +16,8 @@ import RegisterScreen from './src/AuthenticationScreen/Register';
 import HomeScreen from './src/Home/AQIIndicator/index'; 
 import BottomNav from './src/Home/BottomNav'; 
 
+import Map from './src/Map/Location';
+
   const Stack = createStackNavigator();
 
   export default function App() {
@@ -62,7 +64,7 @@ import BottomNav from './src/Home/BottomNav';
             <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
             <Stack.Screen name="Home" component={HomeScreenWithBackground} />
             <Stack.Screen name="AQIIndicator" component={HomeScreen} />
- 
+            <Stack.Screen name="Location" component={Map} />
           </Stack.Navigator>
         )}
       </NavigationContainer>
