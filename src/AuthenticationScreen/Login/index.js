@@ -8,6 +8,11 @@ export default function LoginScreen({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
+const handleLogin = async () => {
+  navigation.navigate("Home");
+
+}
+
   return (
     <ImageBackground source={require('../../../src/assets/2.png')} style={styles.background}>
       <View style={styles.container}>
@@ -47,6 +52,7 @@ export default function LoginScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.button}
+          onPress={handleLogin}
         >
           <Text style={styles.buttonText}>{'Log In'}</Text>
         </TouchableOpacity>
