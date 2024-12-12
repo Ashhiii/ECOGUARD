@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Video } from 'expo-av';
 import { Image, StyleSheet, Animated, ImageBackground } from 'react-native';
 
 import AdminHome from './src/AdminPage/AdminHome';
@@ -19,6 +20,12 @@ import BottomNav from './src/Home/BottomNav';
 import Map from './src/Map/Location';
 import ReportingTool from './src/ReportingTool/Report';
 import Notification from './src/Notification/Notify';
+
+import EnviroTipsScreen from './src/Components/IconGrid/index'; 
+import TreeScreen from './src/Components/TreeScreen'; 
+import RecycleScreen from './src/Components/RecycleScreen';
+import PollutionScreen from './src/Components/PollutionScreen'; 
+import FootScreen from './src/Components/FootScreen'; 
 
   const Stack = createStackNavigator();
 
@@ -69,6 +76,11 @@ import Notification from './src/Notification/Notify';
             <Stack.Screen name="Location" component={Map} />
             <Stack.Screen name="ReportingTool" component={ReportingTool} />
             <Stack.Screen name="Notification" component={Notification} />
+            <Stack.Screen name="EnviroTips" component={EnviroTipsScreenWithBackground} />
+            <Stack.Screen name="TreeScreen" component={TreeScreen} />
+            <Stack.Screen name="RecycleScreen" component={RecycleScreen} />
+            <Stack.Screen name="PollutionScreen" component={PollutionScreen} />
+            <Stack.Screen name="FootScreen" component={FootScreen} />
           </Stack.Navigator>
         )}
       </NavigationContainer>
@@ -82,6 +94,25 @@ import Notification from './src/Notification/Notify';
       resizeMode="cover"
     >
       <HomeScreen navigation={navigation} />
+      <BottomNav navigation={navigation} /> 
+    </ImageBackground>
+  );
+
+  const EnviroTipsScreenWithBackground = ({ navigation }) => (
+    <ImageBackground
+      source={require('./src/assets/background.jpg')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <Video
+        source={require('./src/assets/video.mp4')}
+        style={styles.headerVideo}
+        resizeMode="cover"
+        shouldPlay
+        isLooping
+        isMuted
+      />
+      <EnviroTipsScreen />
       <BottomNav navigation={navigation} /> 
     </ImageBackground>
   );
@@ -104,6 +135,14 @@ import Notification from './src/Notification/Notify';
     background: {
       flex: 1,
       justifyContent: 'flex-start',
+    },
+    headerVideo: {
+      width: '180%',
+      height: 260,
+      position: 'absolute',
+      top: 0,
+      left: -140,
+      zIndex: 0,
     },
   });
 
