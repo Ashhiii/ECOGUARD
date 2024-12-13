@@ -16,7 +16,6 @@ import RegisterScreen from './src/AuthenticationScreen/Register';
 
 import HomeScreen from './src/Home/AQIIndicator/index'; 
 import BottomNav from './src/Home/BottomNav'; 
-
 import Map from './src/Map/Location';
 import ReportingTool from './src/ReportingTool/Report';
 import Notification from './src/Notification/Notify';
@@ -27,7 +26,14 @@ import RecycleScreen from './src/Components/RecycleScreen';
 import PollutionScreen from './src/Components/PollutionScreen'; 
 import FootScreen from './src/Components/FootScreen'; 
 
-  const Stack = createStackNavigator();
+import Settings from './src/Settings/SettingsScreen';
+import MyAccount from './src/Settings/MyAccount';
+import Notifications from './src/Settings/NotificationSettings';
+import Privacy from './src/Settings/PrivacyAndSecurity';
+import HelpSupport from './src/Settings/HelpAndSupport';
+import About from './src/Settings/About';
+
+const Stack = createStackNavigator();
 
   export default function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -81,6 +87,12 @@ import FootScreen from './src/Components/FootScreen';
             <Stack.Screen name="RecycleScreen" component={RecycleScreen} />
             <Stack.Screen name="PollutionScreen" component={PollutionScreen} />
             <Stack.Screen name="FootScreen" component={FootScreen} />
+            <Stack.Screen name="Settings" component={Settings} />
+            <Stack.Screen name="MyAccount" component={MyAccount} options={{ title: 'My Account' }} />
+            <Stack.Screen name="NotificationSettings" component={Notifications} options={{ title: 'Notifications' }} />
+            <Stack.Screen name="PrivacyAndSecurity" component={Privacy} options={{ title: 'Privacy & Security' }} />
+            <Stack.Screen name="HelpAndSupport" component={HelpSupport} options={{ title: 'Help & Support' }} />
+            <Stack.Screen name="About" component={About} options={{ title: 'About' }} />
           </Stack.Navigator>
         )}
       </NavigationContainer>

@@ -9,7 +9,7 @@ const BottomNav = ({ navigation }) => {
     { icon: 'leaf', text: 'EnviroTips', screen: 'EnviroTips' },
     { icon: 'camera', text: 'Reporting Tool', screen: 'ReportingTool'},
     { icon: 'bell', text: 'Notifications', screen: 'Notification'},
-    { icon: 'cog', text: 'Settings' },
+    { icon: 'cog', text: 'Settings', screen: 'Settings' },
   ];
 
   return (
